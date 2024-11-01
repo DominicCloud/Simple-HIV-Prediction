@@ -1,0 +1,97 @@
+<!-- templates/form.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <title>HIV Classifier Input Form</title>
+</head>
+<body>
+    <h1>HIV Classifier Prediction Form</h1>
+    <form action="/predict" method="post">
+        <!-- Age Input -->
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="12" max="80" required>
+        <br><br>
+
+        <!-- Marital Status -->
+        <label for="marital_status">Marital Status:</label>
+        <select id="marital_status" name="marital_status" required>
+            <option value="UNMARRIED">Unmarried</option>
+            <option value="MARRIED">Married</option>
+            <option value="Widowed">Widowed</option>
+            <option value="Divorced">Divorced</option>
+            <option value="Cohabiting">Cohabiting</option>
+        </select>
+        <br><br>
+
+        <!-- STD -->
+        <label>STD History:</label>
+        <input type="radio" id="std_yes" name="std" value="YES" required>
+        <label for="std_yes">Yes</label>
+        <input type="radio" id="std_no" name="std" value="NO">
+        <label for="std_no">No</label>
+        <br><br>
+
+        <!-- Educational Background -->
+        <label for="education">Educational Background:</label>
+        <select id="education" name="education" required>
+            <option value="College Degree">College Degree</option>
+            <option value="Senior High School">Senior High School</option>
+            <option value="Junior High School">Junior High School</option>
+            <option value="Illiteracy">Illiteracy</option>
+            <option value="Primary School">Primary School</option>
+        </select>
+        <br><br>
+
+        <!-- HIV Test in Past Year -->
+        <label>HIV Test in Past Year:</label>
+        <input type="radio" id="hiv_test_yes" name="hiv_test" value="YES" required>
+        <label for="hiv_test_yes">Yes</label>
+        <input type="radio" id="hiv_test_no" name="hiv_test" value="NO">
+        <label for="hiv_test_no">No</label>
+        <br><br>
+
+        <!-- AIDS Education -->
+        <label>AIDS Education:</label>
+        <input type="radio" id="aids_education_yes" name="aids_education" value="YES" required>
+        <label for="aids_education_yes">Yes</label>
+        <input type="radio" id="aids_education_no" name="aids_education" value="NO">
+        <label for="aids_education_no">No</label>
+        <br><br>
+
+        <!-- Places of Seeking Sex Partners -->
+        <label for="sex_partner_place">Places of Seeking Sex Partners:</label>
+        <select id="sex_partner_place" name="sex_partner_place" required>
+            <option value="Bar">Bar</option>
+            <option value="None">None</option>
+            <option value="Park">Park</option>
+            <option value="Internet">Internet</option>
+            <option value="Public bath">Public Bath</option>
+            <option value="Others">Others</option>
+        </select>
+        <br><br>
+
+        <!-- Sexual Orientation -->
+        <label for="sexual_orientation">Sexual Orientation:</label>
+        <select id="sexual_orientation" name="sexual_orientation" required>
+            <option value="Heterosexual">Heterosexual</option>
+            <option value="Bisexual">Bisexual</option>
+            <option value="Homosexual">Homosexual</option>
+        </select>
+        <br><br>
+
+        <!-- Drug-taking -->
+        <label>Drug-taking:</label>
+        <input type="radio" id="drug_taking_yes" name="drug_taking" value="YES" required>
+        <label for="drug_taking_yes">Yes</label>
+        <input type="radio" id="drug_taking_no" name="drug_taking" value="NO">
+        <label for="drug_taking_no">No</label>
+        <br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
